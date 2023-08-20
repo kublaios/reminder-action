@@ -3,6 +3,7 @@
 This fork supports reminders on the closed issues. However, contrary to the original repo, it has limited support for the reminder prompts and only supports the following format:
 - `/remind [who] to [what] [when]` (e.g., `/remind me to review this PR in 6 hours`)
 - `/remind [who] [when] to [what]` (e.g., `/remind @kublaios in 2 days to address the comments`)
+
 Where `[when]` is recognized only in the following formats: `in|after X minute(s)|hour(s)|day(s)|month(s)|year(s)`
 
 # Reminder Action
