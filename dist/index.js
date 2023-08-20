@@ -9450,7 +9450,7 @@ function getPastDueReminders(now, items) {
   return items.filter((item) => {
     try {
       const dueDate = Date.parse(item.reminder.when);
-      console.log('checking issue #', item.issueNumber, 'due date', dueDate.toLocaleString());
+      console.log('checking issue #', item.issueNumber, 'due date', item.reminder.when.toLocaleString());
 
       return dueDate < now;
     } catch (error) {
