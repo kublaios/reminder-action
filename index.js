@@ -81,7 +81,7 @@ async function run() {
     core.startGroup('filter reminders for past due');
     const pastDueReminders = getPastDueReminders(Date.now(), reminders);
 
-    if (reminders.length < 1) {
+    if (pastDueReminders.length < 1) {
       core.info('no past due reminders found');
 
       return;
@@ -89,7 +89,7 @@ async function run() {
     core.endGroup();
 
     core.startGroup('notify past due reminders');
-    core.info(`sending ${reminders.length} past due notifications`);
+    core.info(`sending ${pastDueReminders.length} past due notifications`);
 
     const metadata = createCommentsMetadata(pastDueReminders);
 
