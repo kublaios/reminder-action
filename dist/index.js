@@ -9713,7 +9713,7 @@ async function run() {
       octokit.rest.issues.listForRepo,
       {
         ...getIssueProps(context),
-        state: 'open',
+        state: 'all',
         labels: [LABEL],
       }
     )) {
@@ -9721,9 +9721,12 @@ async function run() {
     }
 
     if (issues.length < 1) {
-      core.info('no open issues found with the reminder label');
+      core.info('no issues found with the reminder label');
 
       return;
+    }
+    else {
+      core.info('found ' + issues.length + ' issues with the reminder label');
     }
     core.endGroup();
 
